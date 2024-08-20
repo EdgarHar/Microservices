@@ -22,42 +22,42 @@ public class CsvLoader {
   private ResourceLoader resourceLoader;
 
   public List<Product> loadProducts() throws IOException, CsvException {
-    final Resource resource = resourceLoader.getResource("classpath:data/jcpenney_com-ecommerce_sample.csv");
-    final CSVReader csvReader = new CSVReader(new InputStreamReader(resource.getInputStream()));
-    final List<Product> products = new ArrayList<>();
-    final List<String[]> records = csvReader.readAll();
-    records.remove(0);
-    for (String[] record : records) {
-      final Product product = Product
-          .builder()
-          .withId(record[0])
-          .withSku(record[1])
-          .withTitle(record[2])
-          .withDescription(record[3])
-          .withPrice(Optional
-              .of(record[4])
-              .filter(str -> !str.isBlank() && !str.contains("-"))
-              .map(BigDecimal::new)
-              .orElse(null))
-          .withSalePrice(Optional
-              .of(record[5])
-              .filter(str -> !str.isBlank() && !str.contains("-"))
-              .map(BigDecimal::new)
-              .orElse(null))
-          .withCategory(record[6])
-          .withCategoryTree(record[7])
-          .withAverageRating(record[8])
-          .withProductURL(record[9])
-          .withProductImageURL(record[10])
-          .withBrand(record[11])
-          .withTotalReviews(record[12])
-          .build();
+//    final Resource resource = resourceLoader.getResource("classpath:data/jcpenney_com-ecommerce_sample.csv");
+//    final CSVReader csvReader = new CSVReader(new InputStreamReader(resource.getInputStream()));
+//    final List<Product> products = new ArrayList<>();
+//    final List<String[]> records = csvReader.readAll();
+//    records.remove(0);
+//    for (String[] record : records) {
+//      final Product product = Product
+//          .builder()
+//          .withId(record[0])
+//          .withSku(record[1])
+//          .withTitle(record[2])
+//          .withDescription(record[3])
+//          .withPrice(Optional
+//              .of(record[4])
+//              .filter(str -> !str.isBlank() && !str.contains("-"))
+//              .map(BigDecimal::new)
+//              .orElse(null))
+//          .withSalePrice(Optional
+//              .of(record[5])
+//              .filter(str -> !str.isBlank() && !str.contains("-"))
+//              .map(BigDecimal::new)
+//              .orElse(null))
+//          .withCategory(record[6])
+//          .withCategoryTree(record[7])
+//          .withAverageRating(record[8])
+//          .withProductURL(record[9])
+//          .withProductImageURL(record[10])
+//          .withBrand(record[11])
+//          .withTotalReviews(record[12])
+//          .build();
+//
+//      products.add(product);
+//    }
+//    csvReader.close();
 
-      products.add(product);
-    }
-    csvReader.close();
-
-    return products;
+    return null;
   }
 
 }

@@ -25,11 +25,13 @@ public class InventoryServiceApplication {
 
   @Bean
   public Map<String, Integer> inventoryMap() throws IOException, CsvException {
-    final Random random = new Random();
+//    final Random random = new Random();
+//
+//    return csvLoader.loadProducts()
+//        .stream()
+//        .collect(Collectors.toMap(Product::getId, product -> random.nextInt(0, 11)));
 
-    return csvLoader.loadProducts()
-        .stream()
-        .collect(Collectors.toMap(Product::getId, product -> random.nextInt(0, 11)));
+    return null;
   }
 
 }
