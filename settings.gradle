@@ -1,4 +1,1 @@
 rootProject.name = 'Microservices'
-
-include('catalog-service')
-include('config-server')

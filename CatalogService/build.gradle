@@ -12,12 +12,6 @@ repositories {
     mavenCentral()
 }
 
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
-}
-
 ext {
     set('springCloudVersion', "2023.0.3")
 }
@@ -29,15 +23,15 @@ dependencyManagement {
 }
 
 dependencies {
-    implementation 'com.opencsv:opencsv:5.7.1'
-    implementation 'org.springframework.cloud:spring-cloud-starter-config'
-    implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
-    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-    compileOnly "org.projectlombok:lombok"
-    annotationProcessor "org.projectlombok:lombok"
+    implementation(libs.opencsv)
+    implementation(libs.spring.cloud.config)
+    implementation(libs.spring.cloud.bootstrap)
+    implementation(libs.spring.cloud.eureka)
+    testImplementation(libs.spring.test)
+    testRuntimeOnly(libs.junit.platform.launcher)
+    implementation(libs.spring.starter)
+    implementation(libs.lombok)
+    annotationProcessor(libs.lombok.processor)
 }
 
 tasks.named('test') {

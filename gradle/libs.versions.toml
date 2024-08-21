@@ -1,0 +1,24 @@
+[versions]
+spring_boot = "3.3.2"
+lombok = "1.18.26"
+opencsv = "5.7.1"
+junit_platform = "1.9.3"
+
+[libraries]
+spring_starter = { group = "org.springframework.boot", name = "spring-boot-starter-web", version.ref = "spring_boot" }
+spring_test = { group = "org.springframework.boot", name = "spring-boot-starter-test", version.ref = "spring_boot" }
+
+spring_cloud_config_server = {group = "org.springframework.cloud", name = "spring-cloud-config-server"}
+spring_cloud_config = { group = "org.springframework.cloud", name = "spring-cloud-starter-config" }
+spring_cloud_bootstrap = { group = "org.springframework.cloud", name = "spring-cloud-starter-bootstrap" }
+spring_cloud_eureka = { group = "org.springframework.cloud", name = "spring-cloud-starter-netflix-eureka-client" }
+spring_cloud_eureka_server = {group = "org.springframework.cloud", name = "spring-cloud-starter-netflix-eureka-server"}
+
+lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }
+lombok_processor = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }
+
+opencsv = { group = "com.opencsv", name = "opencsv", version.ref = "opencsv" }
+
+feign = { group = "org.springframework.cloud", name = "spring-cloud-starter-openfeign"}
+
+junit_platform_launcher = { group = "org.junit.platform", name = "junit-platform-launcher", version.ref = "junit_platform" }
