@@ -1,4 +1,4 @@
-package io.github.edgarhar.inventoryservice.domain;
+package io.github.edgarhar.common.domain;
 
 import lombok.Builder;
 import lombok.Data;
@@ -24,4 +24,3 @@ public class Product {
   private String       totalReviews;
 
 }
-

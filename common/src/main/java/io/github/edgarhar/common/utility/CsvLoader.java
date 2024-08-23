@@ -1,8 +1,8 @@
-package io.github.EdgarHar.catalogservice.util;
+package io.github.edgarhar.common.utility;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
-import io.github.EdgarHar.catalogservice.domain.Product;
+import io.github.edgarhar.common.domain.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;

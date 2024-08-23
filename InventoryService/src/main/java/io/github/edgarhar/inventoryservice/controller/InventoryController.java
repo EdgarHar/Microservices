@@ -1,7 +1,6 @@
-package io.github.EdgarHar.catalogservice.controller;
+package io.github.edgarhar.inventoryservice.controller;
 
-import io.github.EdgarHar.catalogservice.service.CatalogService;
-import io.github.edgarhar.common.domain.Product;
+import io.github.edgarhar.inventoryservice.service.InventoryService;
 import jakarta.ws.rs.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -14,24 +13,18 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/catalog")
 @RequiredArgsConstructor
-public class CatalogController {
+@RequestMapping("/inventory")
+public class InventoryController {
 
-  private final CatalogService catalogService;
+  private final InventoryService inventoryService;
 
-  @GetMapping("/{id}/sku")
-  public ResponseEntity<List<Product>> getCatalogsBySku(@PathVariable(name = "id") String sku) {
-    return ResponseEntity.ok(catalogService.getCatalogsBySku(sku));
-  }
-
-  @GetMapping("/{id}/id")
-  public ResponseEntity<Product> getCatalogById(@PathVariable(name = "id") String id) {
-    return ResponseEntity.ok(catalogService.getCatalogById(id));
+  @GetMapping("/{id}")
+  public ResponseEntity<Integer> getInventory(@PathVariable(name = "id") String id) {
+    return ResponseEntity.ok(inventoryService.getInventory(id));
   }
 
   @ExceptionHandler(NotFoundException.class)

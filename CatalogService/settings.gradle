@@ -8,3 +8,6 @@ dependencyResolutionManagement {
     }
 }
 
+include 'common'
+project(':common').projectDir = file('../common')
+

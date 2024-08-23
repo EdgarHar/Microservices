@@ -1,8 +1,8 @@
 package io.github.EdgarHar.catalogservice;
 
 import com.opencsv.exceptions.CsvException;
-import io.github.EdgarHar.catalogservice.domain.Product;
-import io.github.EdgarHar.catalogservice.util.CsvLoader;
+import io.github.edgarhar.common.domain.Product;
+import io.github.edgarhar.common.utility.CsvLoader;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"io.github.EdgarHar.catalogservice", "io.github.edgarhar.common"})
 public class CatalogServiceApplication {
 
   private static List<Product> products;

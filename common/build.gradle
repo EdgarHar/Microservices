@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.2'
+    id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'io.github.EdgarHar'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(libs.opencsv)
+    implementation(libs.spring.starter)
+    implementation(libs.lombok)
+    annotationProcessor(libs.lombok.processor)
+}
