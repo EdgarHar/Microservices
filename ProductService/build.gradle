@@ -27,6 +27,7 @@ dependencies {
     implementation(libs.spring.cloud.bootstrap)
     implementation(libs.spring.cloud.eureka)
     implementation(libs.feign)
+    implementation(libs.resilience4j.circuitbreaker)
     testImplementation(libs.spring.test)
     testRuntimeOnly(libs.junit.platform.launcher)
     implementation(libs.spring.starter)

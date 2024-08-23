@@ -15,6 +15,8 @@ spring_cloud_eureka = { group = "org.springframework.cloud", name = "spring-clou
 spring_cloud_eureka_server = {group = "org.springframework.cloud", name = "spring-cloud-starter-netflix-eureka-server"}
 spring_cloud_gateway = {group = "org.springframework.cloud", name = "spring-cloud-starter-gateway" }
 
+resilience4j_circuitbreaker = {group = "io.github.resilience4j", name = "resilience4j-circuitbreaker", version = "2.2.0" }
+
 netty_resolver_dns_native_macos = { group = "io.netty", name = "netty-resolver-dns-native-macos" }
 
 lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }

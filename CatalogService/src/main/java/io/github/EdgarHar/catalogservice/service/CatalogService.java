@@ -14,7 +14,7 @@ import java.util.Optional;
 public class CatalogService {
 
   private final Map<String, Product>       productIdMap;
-  private final   Map<String, List<Product>> productSkuMap;
+  private final Map<String, List<Product>> productSkuMap;
 
   public Product getCatalogById(final String productId) {
     return Optional.of(productIdMap.get(productId))
