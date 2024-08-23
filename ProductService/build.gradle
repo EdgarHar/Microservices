@@ -32,6 +32,7 @@ dependencies {
     implementation(libs.spring.starter)
     implementation(libs.lombok)
     annotationProcessor(libs.lombok.processor)
+    implementation project(":common")
 }
 
 tasks.named('test') {

@@ -1,4 +1,4 @@
-rootProject.name = 'product-service'
+rootProject.name = 'gateway-service'
 
 dependencyResolutionManagement {
     versionCatalogs {
@@ -7,6 +7,3 @@ dependencyResolutionManagement {
         }
     }
 }
-
-include ('common')
-project(':common').projectDir = file('../common')
