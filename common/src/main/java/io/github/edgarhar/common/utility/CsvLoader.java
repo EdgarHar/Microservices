@@ -11,9 +11,10 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.math.BigDecimal;
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Component
 public class CsvLoader {
@@ -21,10 +22,10 @@ public class CsvLoader {
   @Autowired
   private ResourceLoader resourceLoader;
 
-  public List<Product> loadProducts() throws IOException, CsvException {
+  public Set<Product> loadProducts() throws IOException, CsvException {
     final Resource resource = resourceLoader.getResource("classpath:data/jcpenney_com-ecommerce_sample.csv");
     final CSVReader csvReader = new CSVReader(new InputStreamReader(resource.getInputStream()));
-    final List<Product> products = new ArrayList<>();
+    final Set<Product> products = new HashSet<>();
     final List<String[]> records = csvReader.readAll();
     records.remove(0);
     for (String[] record : records) {
