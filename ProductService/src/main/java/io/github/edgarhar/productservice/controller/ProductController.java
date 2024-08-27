@@ -2,6 +2,7 @@ package io.github.edgarhar.productservice.controller;
 
 import io.github.edgarhar.common.domain.Product;
 import io.github.edgarhar.productservice.exception.InventoryNotSupportedException;
+import io.github.edgarhar.productservice.exception.ServiceUnavailableException;
 import io.github.edgarhar.productservice.service.ProductService;
 import jakarta.ws.rs.NotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -43,4 +44,14 @@ public class ProductController {
 
     return errorResponse;
   }
+
+  @ExceptionHandler(ServiceUnavailableException.class)
+  @ResponseStatus(HttpStatus.SERVICE_UNAVAILABLE)
+  public Map<String, String> handleServiceUnavailableException(ServiceUnavailableException ex) {
+    Map<String, String> errorResponse = new HashMap<>();
+    errorResponse.put("error", ex.getMessage());
+
+    return errorResponse;
+  }
+
 }

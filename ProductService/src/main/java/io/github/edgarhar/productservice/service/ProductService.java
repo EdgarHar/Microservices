@@ -10,6 +10,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -24,9 +25,12 @@ public class ProductService {
   private final InventoryServiceClient inventoryServiceClient;
 
   public Product getProductById(final String id) {
+    final Set<String> idSet = new HashSet<>();
+    idSet.add(id);
+
     return Optional
         .of(id)
-        .map(id1 -> getCountByIdSet(Set.of(id)))
+        .map(id1 -> getCountByIdSet(idSet))
         .map(ResponseEntity::getBody)
         .map(map -> map.get(id))
         .filter(count -> count > 0)
@@ -46,7 +50,6 @@ public class ProductService {
         .stream()
         .filter(product -> inventory.get(product.getId()) > 0)
         .collect(Collectors.toList());
-
   }
 
   private ResponseEntity<Product> getCatalogById(final String id) {
